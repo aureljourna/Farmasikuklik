@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FarmasiKu – Kenali Obatmu</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="header">
+    <div class="container nav-container">
+
+        <a href="#" class="logo" onclick="showPage('home')">
+            <div class="logo-icon">
+                <i class="fa-solid fa-capsules"></i>
+            </div>
+
+            <div>
+                <span>Farmasi</span><strong>Ku</strong>
+                <small>Kenali Obatmu</small>
+            </div>
+        </a>
+
+        <<nav class="nav-menu" id="navMenu">
+    <a href="#" onclick="showPage('home')">Beranda</a>
+    <a href="#" onclick="showPage('search')">Cari Obat</a>
+    <a href="#" onclick="showPage('categories')">Golongan Obat</a>
+    <a href="#" onclick="showPage('education')">Edukasi</a>
+    <a href="#" onclick="showPage('tips')">Tips Aman</a>
+    <a href="#" onclick="showPage('about')">Tentang Kami</a>
+
+    <!-- LOGIN -->
+    <a href="#" onclick="showPage('login')">Login</a>
+</nav>
+
+        <button class="menu-toggle" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </div>
+</header>
+
+
+<main><!-- ================= LOGIN ================= -->
+<section id="login" class="page active">
+
+    <div class="container page-container">
+
+        </button>
+
+        <div class="login-container">
+
+            <div class="login-card">
+
+                <div class="login-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <h1>Login</h1>
+
+                <p class="login-subtitle">
+                    Silakan masuk untuk melanjutkan
+                </p>
+
+                <form onsubmit="loginUser(event)">
+
+                    <div class="input-group">
+                        <label>Email</label>
+
+                        <div class="input-box">
+                            <i class="fa-solid fa-envelope"></i>
+
+                            <input 
+                                type="email"
+                                id="loginEmail"
+                                placeholder="Masukkan email"
+                                required
+                            >
+                        </div>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label>Password</label>
+
+                        <div class="input-box">
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input 
+                                type="password"
+                                id="loginPassword"
+                                placeholder="Masukkan password"
+                                required
+                            >
+                        </div>
+                    </div>
+
+
+                    <div class="login-options">
+
+                        <label>
+                            <input type="checkbox">
+                            Ingat saya
+                        </label>
+
+                        <a href="#" onclick="forgotPassword()">
+                            Lupa password?
+                        </a>
+
+                    </div>
+
+
+                    <button type="submit" class="login-button">
+                        Login
+                    </button>
+
+                </form>
+
+
+                <p class="register-text">
+                    Belum punya akun?
+                    <a href="#" onclick="registerUser()">
+                        Daftar
+                    </a>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= HOME ================= -->
+<section id="home" class="page">
+
+    <section class="hero">
+        <div class="container hero-content">
+
+            <div class="hero-text">
+
+                <span class="badge">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                    Edukasi Obat Terpercaya
+                </span>
+
+                <h1>
+                    Kenali Obatmu,
+                    <span>Gunakan dengan Bijak</span>
+                </h1>
+
+                <p>
+                    Temukan informasi obat yang mudah dipahami untuk membantu
+                    penggunaan obat secara aman dan tepat.
+                </p>
+
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="showPage('search')">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        Cari Informasi Obat
+                    </button>
+
+                    <button class="btn-secondary" onclick="showPage('education')">
+                        Pelajari Edukasi
+                    </button>
+                </div>
+
+                <div class="hero-stats">
+
+                    <div>
+                        <strong>20+</strong>
+                        <span>Informasi Obat</span>
+                    </div>
+
+                    <div>
+                        <strong>5</strong>
+                        <span>Golongan Obat</span>
+                    </div>
+
+                    <div>
+                        <strong>100%</strong>
+                        <span>Untuk Edukasi</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-image">
+
+                <div class="medical-circle">
+                    <i class="fa-solid fa-pills"></i>
+                </div>
+
+                <div class="floating-card card-one">
+                    <i class="fa-solid fa-prescription-bottle-medical"></i>
+                    <span>Informasi Obat</span>
+                </div>
+
+                <div class="floating-card card-two">
+                    <i class="fa-solid fa-shield-heart"></i>
+                    <span>Penggunaan Aman</span>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- QUICK FEATURES -->
+    <section class="quick-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+                <span>FITUR UTAMA</span>
+                <h2>Belajar Obat Jadi Lebih Mudah</h2>
+                <p>
+                    Semua informasi penting tersedia dalam satu website.
+                </p>
+            </div>
+
+            <div class="feature-grid">
+
+                <div class="feature-card" onclick="showPage('search')">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <h3>Cari Obat</h3>
+                    <p>
+                        Cari informasi obat berdasarkan nama obat.
+                    </p>
+                    <button>Lihat Obat →</button>
+                </div>
+
+
+                <div class="feature-card" onclick="showPage('categories')">
+                    <div class="feature-icon blue">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <h3>Golongan Obat</h3>
+                    <p>
+                        Kenali perbedaan berbagai golongan obat.
+                    </p>
+                    <button>Lihat Golongan →</button>
+                </div>
+
+
+                <div class="feature-card" onclick="showPage('education')">
+                    <div class="feature-icon purple">
+                        <i class="fa-solid fa-book-medical"></i>
+                    </div>
+                    <h3>Edukasi</h3>
+                    <p>
+                        Pelajari informasi penting mengenai penggunaan obat.
+                    </p>
+                    <button>Baca Edukasi →</button>
+                </div>
+
+
+                <div class="feature-card" onclick="showPage('tips')">
+                    <div class="feature-icon orange">
+                        <i class="fa-solid fa-shield-heart"></i>
+                    </div>
+                    <h3>Tips Aman</h3>
+                    <p>
+                        Tips sederhana agar penggunaan obat lebih aman.
+                    </p>
+                    <button>Lihat Tips →</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- POPULAR DRUGS -->
+    <section class="popular-section">
+
+        <div class="container">
+
+            <div class="section-heading left">
+
+                <div>
+                    <span>OBAT POPULER</span>
+                    <h2>Informasi Obat yang Sering Dicari</h2>
+                </div>
+
+                <button class="text-button" onclick="showPage('search')">
+                    Lihat Semua →
+                </button>
+
+            </div>
+
+
+            <div class="drug-grid" id="popularDrugs"></div>
+
+        </div>
+
+    </section>
+
+</section>
+
+
+<!-- ================= SEARCH PAGE ================= -->
+<section id="search" class="page">
+
+    <div class="container page-container">
+
+        <button class="back-button" onclick="showPage('home')">
+            <i class="fa-solid fa-arrow-left"></i>
+            Kembali
+        </button>
+
+        <div class="page-title">
+            <span>CARI INFORMASI</span>
+            <h1>Temukan Informasi Obat</h1>
+            <p>
+                Ketik nama obat yang ingin kamu cari.
+            </p>
+        </div>
+
+
+        <div class="search-box">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Contoh: Paracetamol, Amoxicillin..."
+                oninput="searchDrug()"
+            >
+
+            <button onclick="searchDrug()">
+                Cari
+            </button>
+
+        </div>
+
+
+        <div class="filter-area">
+
+            <div>
+                <label>Filter Golongan</label>
+
+                <select id="categoryFilter" onchange="searchDrug()">
+                    <option value="all">Semua Golongan</option>
+                    <option value="Obat Bebas">Obat Bebas</option>
+                    <option value="Obat Bebas Terbatas">Obat Bebas Terbatas</option>
+                    <option value="Obat Keras">Obat Keras</option>
+                </select>
+
+            </div>
+
+            <div class="result-count" id="resultCount"></div>
+
+        </div>
+
+
+        <div class="drug-grid" id="drugList"></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DRUG DETAIL ================= -->
+<section id="drugDetail" class="page">
+
+    <div class="container page-container">
+
+        <button class="back-button" onclick="showPage('search')">
+            <i class="fa-solid fa-arrow-left"></i>
+            Kembali ke Pencarian
+        </button>
+
+        <div id="drugDetailContent"></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CATEGORIES ================= -->
+<section id="categories" class="page">
+
+    <div class="container page-container">
+
+        <button class="back-button" onclick="showPage('home')">
+            <i class="fa-solid fa-arrow-left"></i>
+            Kembali
+        </button>
+
+        <div class="page-title">
+            <span>GOLONGAN OBAT</span>
+            <h1>Kenali Golongan Obat</h1>
+            <p>
+                Setiap golongan obat memiliki aturan penggunaan yang berbeda.
+            </p>
+        </div>
+
+
+        <div class="category-grid">
+
+            <div class="category-card">
+                <div class="category-icon green">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <h3>Obat Bebas</h3>
+                <p>
+                    Obat yang dapat diperoleh tanpa resep dokter dan umumnya
+                    digunakan untuk keluhan ringan.
+                </p>
+                <span class="symbol">Simbol: Lingkaran Hijau</span>
+            </div>
+
+
+            <div class="category-card">
+                <div class="category-icon blue">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                </div>
+                <h3>Obat Bebas Terbatas</h3>
+                <p>
+                    Dapat dibeli tanpa resep, tetapi penggunaannya harus
+                    memperhatikan peringatan tertentu.
+                </p>
+                <span class="symbol">Simbol: Lingkaran Biru</span>
+            </div>
+
+
+            <div class="category-card">
+                <div class="category-icon red">
+                    <i class="fa-solid fa-prescription"></i>
+                </div>
+                <h3>Obat Keras</h3>
+                <p>
+                    Penggunaan obat keras harus berdasarkan resep dan
+                    pengawasan tenaga kesehatan.
+                </p>
+                <span class="symbol">Simbol: Lingkaran Merah</span>
+            </div>
+
+
+            <div class="category-card">
+                <div class="category-icon purple">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+                <h3>Psikotropika</h3>
+                <p>
+                    Zat atau obat yang memengaruhi sistem saraf pusat dan
+                    penggunaannya diatur secara khusus.
+                </p>
+                <span class="symbol">Pengawasan khusus</span>
+            </div>
+
+
+            <div class="category-card">
+                <div class="category-icon dark">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <h3>Narkotika</h3>
+                <p>
+                    Obat yang penggunaannya memiliki pengaturan dan
+                    pengawasan sangat ketat sesuai peraturan.
+                </p>
+                <span class="symbol">Pengawasan sangat ketat</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EDUCATION ================= -->
+<section id="education" class="page">
+
+    <div class="container page-container">
+
+        <button class="back-button" onclick="showPage('home')">
+            <i class="fa-solid fa-arrow-left"></i>
+            Kembali
+        </button>
+
+        <div class="page-title">
+            <span>EDUKASI</span>
+            <h1>Belajar Tentang Obat</h1>
+            <p>
+                Informasi sederhana untuk membantu memahami penggunaan obat.
+            </p>
+        </div>
+
+
+        <div class="article-grid">
+
+            <article class="article-card" onclick="openArticle('etiket')">
+                <div class="article-icon">
+                    <i class="fa-solid fa-receipt"></i>
+                </div>
+                <h3>Cara Membaca Etiket Obat</h3>
+                <p>
+                    Kenali nama obat, dosis, aturan pakai dan informasi penting
+                    lainnya pada etiket.
+                </p>
+                <span>Baca selengkapnya →</span>
+            </article>
+
+
+            <article class="article-card" onclick="openArticle('simpan')">
+                <div class="article-icon">
+                    <i class="fa-solid fa-box"></i>
+                </div>
+                <h3>Cara Menyimpan Obat yang Benar</h3>
+                <p>
+                    Ketahui bagaimana menyimpan obat agar kualitasnya tetap
+                    terjaga.
+                </p>
+                <span>Baca selengkapnya →</span>
+            </article>
+
+
+            <article class="article-card" onclick="openArticle('generik')">
+                <div class="article-icon">
+                    <i class="fa-solid fa-pills"></i>
+                </div>
+                <h3>Apa Itu Obat Generik?</h3>
+                <p>
+                    Pelajari pengertian obat generik dan perbedaannya dengan
+                    obat bermerek.
+                </p>
+                <span>Baca selengkapnya →</span>
+            </article>
+
+
+            <article class="article-card" onclick="openArticle('bebas')">
+                <div class="article-icon">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                </div>
+                <h3>Obat Bebas vs Obat Keras</h3>
+                <p>
+                    Ketahui perbedaan aturan penggunaan kedua golongan obat.
+                </p>
+                <span>Baca selengkapnya →</span>
+            </article>
+
+
+            <article class="article-card" onclick="openArticle('tigakali')">
+                <div class="article-icon">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+                <h3>Cara Menggunakan Obat 3 Kali Sehari</h3>
+                <p>
+                    Memahami aturan waktu penggunaan obat sesuai petunjuk.
+                </p>
+                <span>Baca selengkapnya →</span>
+            </article>
+
+
+            <article class="article-card" onclick="openArticle('antibiotik')">
+                <div class="article-icon">
+                    <i class="fa-solid fa-bacteria"></i>
+                </div>
+                <h3>Penggunaan Antibiotik</h3>
+                <p>
+                    Pentingnya mengikuti aturan penggunaan antibiotik sesuai
+                    resep tenaga kesehatan.
+                </p>
+                <span>Baca selengkapnya →</span>
+            </article>
+
+
+            <article class="article-card" onclick="openArticle('lasa')">
+                <div class="article-icon">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+                <h3>Apa Itu Obat LASA?</h3>
+                <p>
+                    Kenali obat yang memiliki nama atau tampilan yang mirip.
+                </p>
+                <span>Baca selengkapnya →</span>
+            </article>
+
+
+            <article class="article-card" onclick="openArticle('expired')">
+                <div class="article-icon">
+                    <i class="fa-solid fa-calendar-xmark"></i>
+                </div>
+                <h3>Cara Mengecek Kedaluwarsa</h3>
+                <p>
+                    Pelajari cara menemukan dan membaca tanggal kedaluwarsa obat.
+                </p>
+                <span>Baca selengkapnya →</span>
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ARTICLE DETAIL ================= -->
+<section id="articleDetail" class="page">
+
+    <div class="container page-container">
+
+        <button class="back-button" onclick="showPage('education')">
+            <i class="fa-solid fa-arrow-left"></i>
+            Kembali ke Edukasi
+        </button>
+
+        <div id="articleContent" class="article-detail"></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= TIPS ================= -->
+<section id="tips" class="page">
+
+    <div class="container page-container">
+
+        <button class="back-button" onclick="showPage('home')">
+            <i class="fa-solid fa-arrow-left"></i>
+            Kembali
+        </button>
+
+        <div class="page-title">
+            <span>TIPS AMAN</span>
+            <h1>Gunakan Obat dengan Aman</h1>
+            <p>
+                Kebiasaan sederhana dapat membantu mengurangi kesalahan
+                penggunaan obat.
+            </p>
+        </div>
+
+
+        <div class="tips-container">
+
+            <div class="tip-item">
+                <div class="tip-number">01</div>
+                <div>
+                    <h3>Kenali obat sebelum digunakan</h3>
+                    <p>
+                        Jangan menggunakan obat tanpa mengetahui nama dan
+                        kegunaannya.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="tip-item">
+                <div class="tip-number">02</div>
+                <div>
+                    <h3>Periksa nama dan dosis</h3>
+                    <p>
+                        Pastikan obat dan dosis sesuai dengan etiket atau resep.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="tip-item">
+                <div class="tip-number">03</div>
+                <div>
+                    <h3>Perhatikan tanggal kedaluwarsa</h3>
+                    <p>
+                        Jangan menggunakan obat yang sudah melewati tanggal
+                        kedaluwarsa.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="tip-item">
+                <div class="tip-number">04</div>
+                <div>
+                    <h3>Simpan sesuai petunjuk</h3>
+                    <p>
+                        Simpan obat sesuai kondisi penyimpanan yang tercantum
+                        pada kemasan.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="tip-item">
+                <div class="tip-number">05</div>
+                <div>
+                    <h3>Jangan memberikan obat resep kepada orang lain</h3>
+                    <p>
+                        Obat resep diberikan berdasarkan kondisi dan kebutuhan
+                        pasien tertentu.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="tip-item">
+                <div class="tip-number">06</div>
+                <div>
+                    <h3>Konsultasikan jika ragu</h3>
+                    <p>
+                        Tanyakan kepada apoteker atau dokter jika memiliki
+                        pertanyaan mengenai obat.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="safety-box">
+            <i class="fa-solid fa-user-doctor"></i>
+
+            <div>
+                <h3>Masih ragu dengan obatmu?</h3>
+                <p>
+                    Jangan menebak. Konsultasikan dengan apoteker atau dokter.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="page">
+
+    <div class="container page-container">
+
+        <button class="back-button" onclick="showPage('home')">
+            <i class="fa-solid fa-arrow-left"></i>
+            Kembali
+        </button>
+
+        <div class="about-content">
+
+            <div class="about-icon">
+                <i class="fa-solid fa-capsules"></i>
+            </div>
+
+            <span>FARMASIKU</span>
+
+            <h1>Kenali Obatmu</h1>
+
+            <p>
+                FarmasiKu adalah website edukasi yang dirancang untuk membantu
+                masyarakat umum dan mahasiswa farmasi mengenal informasi dasar
+                mengenai obat dengan bahasa yang sederhana.
+            </p>
+
+            <div class="about-grid">
+
+                <div>
+                    <i class="fa-solid fa-book-open"></i>
+                    <h3>Edukasi</h3>
+                    <p>
+                        Menyediakan informasi dasar mengenai obat.
+                    </p>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-shield-heart"></i>
+                    <h3>Keamanan</h3>
+                    <p>
+                        Mendorong penggunaan obat secara aman dan tepat.
+                    </p>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-users"></i>
+                    <h3>Masyarakat</h3>
+                    <p>
+                        Informasi dibuat agar mudah dipahami.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+
+    <div class="container footer-grid">
+
+        <div class="footer-brand">
+
+            <div class="logo footer-logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-capsules"></i>
+                </div>
+
+                <div>
+                    <span>Farmasi</span><strong>Ku</strong>
+                    <small>Kenali Obatmu</small>
+                </div>
+            </div>
+
+            <p>
+                Media edukasi obat untuk membantu masyarakat mengenali dan
+                menggunakan obat dengan lebih aman.
+            </p>
+
+        </div>
+
+
+        <div>
+            <h3>Menu</h3>
+            <a href="#" onclick="showPage('home')">Beranda</a>
+            <a href="#" onclick="showPage('search')">Cari Obat</a>
+            <a href="#" onclick="showPage('categories')">Golongan Obat</a>
+            <a href="#" onclick="showPage('education')">Edukasi</a>
+        </div>
+
+
+        <div>
+            <h3>Informasi</h3>
+            <a href="#" onclick="showPage('tips')">Tips Aman</a>
+            <a href="#" onclick="showPage('about')">Tentang Kami</a>
+        </div>
+
+
+        <div>
+            <h3>Kontak</h3>
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                info@farmasiku.id
+            </p>
+
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                Indonesia
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom container">
+
+        <p>
+            © 2026 FarmasiKu – Kenali Obatmu
+        </p>
+
+        <p>
+            Informasi untuk tujuan edukasi.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- ================= DISCLAIMER ================= -->
+<div class="disclaimer">
+
+    <i class="fa-solid fa-circle-info"></i>
+
+    <p>
+        Informasi pada website ini ditujukan untuk edukasi dan tidak menggantikan
+        diagnosis, resep, atau konsultasi dengan dokter dan apoteker.
+    </p>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

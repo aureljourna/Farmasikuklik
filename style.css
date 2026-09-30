@@ -1,0 +1,3174 @@
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f7fcfa;
+    color: #193b3a;
+    line-height: 1.6;
+}
+
+button,
+input,
+select {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: min(1150px, 92%);
+    margin: auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255,255,255,.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #e7f1ef;
+}
+
+.nav-container {
+    height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 13px;
+    background: linear-gradient(135deg, #8ee3c0, #60c6dc);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 21px;
+}
+
+.logo span,
+.logo strong {
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.logo span {
+    color: #174d49;
+}
+
+.logo strong {
+    color: #36a6a3;
+}
+
+.logo small {
+    display: block;
+    color: #78918f;
+    font-size: 9px;
+    margin-top: -5px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.nav-menu a {
+    color: #526d6b;
+    font-size: 13px;
+    font-weight: 500;
+    transition: .3s;
+}
+
+.nav-menu a:hover {
+    color: #25a79f;
+}
+
+.menu-toggle {
+    display: none;
+    border: 0;
+    background: transparent;
+    font-size: 23px;
+    color: #246965;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.page {
+    display: none;
+    min-height: 70vh;
+}
+
+.page.active {
+    display: block;
+    animation: fadeIn .35s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 610px;
+    display: flex;
+    align-items: center;
+    background:
+        radial-gradient(circle at 85% 30%, #d9f5f1, transparent 25%),
+        linear-gradient(135deg, #f4fffc, #eef9ff);
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    align-items: center;
+    gap: 50px;
+    padding: 65px 0;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #e0f8ef;
+    color: #218f7b;
+    padding: 8px 14px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 5vw, 62px);
+    line-height: 1.1;
+    margin: 22px 0;
+    color: #174542;
+}
+
+.hero h1 span {
+    color: #36a8a1;
+    display: block;
+}
+
+.hero p {
+    max-width: 580px;
+    color: #637d7b;
+    font-size: 16px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 13px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+    border: 0;
+    padding: 13px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.btn-primary {
+    color: white;
+    background: linear-gradient(135deg, #38b39f, #4baec6);
+    box-shadow: 0 10px 25px rgba(56,179,159,.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    color: #287b78;
+    background: white;
+    border: 1px solid #d9ece9;
+}
+
+.btn-secondary:hover {
+    background: #effaf7;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 35px;
+    margin-top: 45px;
+}
+
+.hero-stats strong {
+    display: block;
+    font-size: 24px;
+    color: #238d85;
+}
+
+.hero-stats span {
+    color: #79918f;
+    font-size: 11px;
+}
+
+.hero-image {
+    min-height: 440px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.medical-circle {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #b9f1df, #c8effa);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 115px;
+    box-shadow: 0 30px 70px rgba(59,168,160,.18);
+}
+
+.floating-card {
+    position: absolute;
+    background: white;
+    padding: 15px 18px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(42,100,94,.12);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #376d6a;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.floating-card i {
+    color: #3bb29f;
+    font-size: 20px;
+}
+
+.card-one {
+    top: 80px;
+    left: 20px;
+}
+
+.card-two {
+    right: 10px;
+    bottom: 80px;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.quick-section,
+.popular-section {
+    padding: 85px 0;
+}
+
+.quick-section {
+    background: white;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-heading.left {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    text-align: left;
+}
+
+.section-heading span,
+.page-title span,
+.about-content > span {
+    color: #39a99b;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.section-heading h2 {
+    color: #194d49;
+    font-size: 30px;
+    margin-top: 7px;
+}
+
+.section-heading p {
+    color: #7b918f;
+    font-size: 13px;
+    margin-top: 7px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 18px;
+}
+
+.feature-card {
+    padding: 27px;
+    border: 1px solid #e5f0ee;
+    border-radius: 20px;
+    background: #fff;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.feature-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 40px rgba(33,103,96,.1);
+}
+
+.feature-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e4f8f0;
+    color: #2ca590;
+    font-size: 20px;
+}
+
+.feature-icon.blue {
+    background: #e7f4fc;
+    color: #399dcc;
+}
+
+.feature-icon.purple {
+    background: #f0eafa;
+    color: #8768c5;
+}
+
+.feature-icon.orange {
+    background: #fff2e5;
+    color: #e89b45;
+}
+
+.feature-card h3 {
+    margin: 20px 0 8px;
+    color: #244e4b;
+}
+
+.feature-card p {
+    font-size: 12px;
+    color: #7b908e;
+}
+
+.feature-card button {
+    border: 0;
+    background: transparent;
+    color: #32a193;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 17px;
+}
+
+
+/* =========================
+   DRUG CARDS
+========================= */
+
+.drug-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 18px;
+}
+
+.drug-card {
+    background: white;
+    border: 1px solid #e2eeec;
+    border-radius: 18px;
+    padding: 22px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.drug-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(36,100,95,.1);
+}
+
+.drug-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 13px;
+    background: #e6f8f3;
+    color: #2fa38f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 17px;
+}
+
+.drug-card h3 {
+    font-size: 16px;
+    color: #244e4b;
+}
+
+.drug-card p {
+    color: #839592;
+    font-size: 11px;
+    margin: 5px 0 12px;
+}
+
+.drug-tag {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 7px;
+    background: #eef9f7;
+    color: #319183;
+    font-size: 9px;
+    font-weight: 600;
+}
+
+.text-button {
+    background: transparent;
+    border: 0;
+    color: #2c9c91;
+    font-weight: 600;
+}
+
+
+/* =========================
+   PAGE CONTAINER
+========================= */
+
+.page-container {
+    padding-top: 45px;
+    padding-bottom: 80px;
+}
+
+.back-button {
+    border: 0;
+    background: white;
+    color: #3a8580;
+    border: 1px solid #dcece9;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 12px;
+    margin-bottom: 35px;
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.page-title h1 {
+    font-size: 38px;
+    color: #194c48;
+    margin: 5px 0;
+}
+
+.page-title p {
+    color: #7c9290;
+    font-size: 13px;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-box {
+    max-width: 750px;
+    margin: 0 auto 30px;
+    background: white;
+    border: 1px solid #dcebe9;
+    border-radius: 16px;
+    padding: 7px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(43,110,103,.06);
+}
+
+.search-box i {
+    color: #70aaa5;
+    margin: 0 12px;
+}
+
+.search-box input {
+    flex: 1;
+    border: 0;
+    outline: 0;
+    padding: 12px 5px;
+    font-size: 13px;
+}
+
+.search-box button {
+    border: 0;
+    background: #35a695;
+    color: white;
+    border-radius: 11px;
+    padding: 11px 20px;
+    font-weight: 600;
+}
+
+.filter-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 25px;
+}
+
+.filter-area label {
+    display: block;
+    color: #64817e;
+    font-size: 11px;
+    margin-bottom: 5px;
+}
+
+.filter-area select {
+    border: 1px solid #d9e9e6;
+    border-radius: 9px;
+    padding: 9px 13px;
+    background: white;
+    color: #4c6f6b;
+}
+
+.result-count {
+    color: #79918e;
+    font-size: 12px;
+}
+
+
+/* =========================
+   DRUG DETAIL
+========================= */
+
+.drug-detail-card {
+    background: white;
+    border: 1px solid #e0ecea;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(40,100,95,.07);
+}
+
+.detail-header {
+    padding: 40px;
+    background: linear-gradient(135deg,#e5f9f2,#edf9fd);
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.detail-icon {
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #34a691;
+    font-size: 35px;
+}
+
+.detail-header h1 {
+    color: #194d49;
+    font-size: 32px;
+}
+
+.detail-header p {
+    color: #6f8986;
+    font-size: 13px;
+}
+
+.detail-body {
+    padding: 35px 40px;
+}
+
+.detail-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 16px;
+}
+
+.info-box {
+    background: #f7fbfa;
+    border-radius: 13px;
+    padding: 18px;
+}
+
+.info-box h4 {
+    color: #5d8581;
+    font-size: 11px;
+    margin-bottom: 5px;
+}
+
+.info-box p {
+    color: #234e4a;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.detail-section {
+    margin-top: 30px;
+}
+
+.detail-section h3 {
+    color: #235c57;
+    font-size: 17px;
+    margin-bottom: 9px;
+}
+
+.detail-section p {
+    color: #718785;
+    font-size: 13px;
+}
+
+.warning-box {
+    margin-top: 30px;
+    padding: 17px;
+    background: #fff7e9;
+    border: 1px solid #f8dfb3;
+    color: #8b672d;
+    border-radius: 12px;
+    font-size: 11px;
+}
+
+
+/* =========================
+   CATEGORY
+========================= */
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.category-card {
+    background: white;
+    border: 1px solid #e0ecea;
+    border-radius: 20px;
+    padding: 27px;
+    transition: .3s;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(37,104,98,.08);
+}
+
+.category-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+.category-icon.green {
+    background: #e2f8ef;
+    color: #2ba082;
+}
+
+.category-icon.blue {
+    background: #e6f4fc;
+    color: #329ac9;
+}
+
+.category-icon.red {
+    background: #ffebeb;
+    color: #db6666;
+}
+
+.category-icon.purple {
+    background: #f0e9fa;
+    color: #8064bd;
+}
+
+.category-icon.dark {
+    background: #e9eeee;
+    color: #4d6664;
+}
+
+.category-card h3 {
+    color: #244e4b;
+}
+
+.category-card p {
+    color: #7b908e;
+    font-size: 12px;
+    margin: 8px 0 15px;
+}
+
+.symbol {
+    color: #35968c;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   ARTICLES
+========================= */
+
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 18px;
+}
+
+.article-card {
+    background: white;
+    border: 1px solid #e0ecea;
+    border-radius: 18px;
+    padding: 23px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(38,105,98,.1);
+}
+
+.article-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 13px;
+    background: #e4f8f2;
+    color: #30a28f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 17px;
+}
+
+.article-card h3 {
+    color: #244e4b;
+    font-size: 15px;
+}
+
+.article-card p {
+    color: #7b908e;
+    font-size: 11px;
+    margin: 8px 0 15px;
+}
+
+.article-card span {
+    color: #32a093;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.article-detail {
+    background: white;
+    border: 1px solid #e0ecea;
+    border-radius: 22px;
+    padding: 40px;
+}
+
+.article-detail h1 {
+    color: #194d49;
+    font-size: 32px;
+    margin-bottom: 18px;
+}
+
+.article-detail h3 {
+    color: #28645f;
+    margin-top: 25px;
+}
+
+.article-detail p,
+.article-detail li {
+    color: #6f8582;
+    font-size: 13px;
+}
+
+.article-detail ul {
+    padding-left: 20px;
+}
+
+
+/* =========================
+   TIPS
+========================= */
+
+.tips-container {
+    max-width: 850px;
+    margin: auto;
+}
+
+.tip-item {
+    display: flex;
+    gap: 22px;
+    padding: 25px;
+    background: white;
+    border: 1px solid #e0ecea;
+    border-radius: 17px;
+    margin-bottom: 15px;
+    transition: .3s;
+}
+
+.tip-item:hover {
+    transform: translateX(5px);
+}
+
+.tip-number {
+    min-width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: #e3f8f0;
+    color: #2ca18d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.tip-item h3 {
+    color: #285c58;
+    font-size: 15px;
+}
+
+.tip-item p {
+    color: #7c908e;
+    font-size: 12px;
+}
+
+.safety-box {
+    max-width: 850px;
+    margin: 30px auto 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: linear-gradient(135deg,#e3f8f0,#e7f7fc);
+    border-radius: 20px;
+    padding: 25px;
+}
+
+.safety-box > i {
+    font-size: 35px;
+    color: #35a694;
+}
+
+.safety-box h3 {
+    color: #245b56;
+}
+
+.safety-box p {
+    color: #708582;
+    font-size: 12px;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-content {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.about-icon {
+    width: 90px;
+    height: 90px;
+    border-radius: 25px;
+    margin: 20px auto;
+    background: linear-gradient(135deg,#8ee3c0,#61c5dd);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 40px;
+}
+
+.about-content h1 {
+    color: #194d49;
+    font-size: 42px;
+}
+
+.about-content > p {
+    color: #718885;
+    font-size: 14px;
+    margin: 15px auto 40px;
+    max-width: 650px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 15px;
+}
+
+.about-grid div {
+    background: white;
+    border: 1px solid #e0ecea;
+    border-radius: 18px;
+    padding: 25px 15px;
+}
+
+.about-grid i {
+    font-size: 24px;
+    color: #31a491;
+}
+
+.about-grid h3 {
+    color: #285d59;
+    font-size: 15px;
+    margin: 10px 0 5px;
+}
+
+.about-grid p {
+    color: #829490;
+    font-size: 11px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    background: #123e3b;
+    color: #dcefeb;
+    padding-top: 55px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.3fr;
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.footer .logo span {
+    color: white;
+}
+
+.footer .logo strong {
+    color: #65d3bb;
+}
+
+.footer p {
+    color: #9cb9b5;
+    font-size: 11px;
+    margin-top: 15px;
+    max-width: 300px;
+}
+
+.footer h3 {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.footer a {
+    display: block;
+    color: #a8c2be;
+    font-size: 11px;
+    margin: 8px 0;
+}
+
+.footer a:hover {
+    color: #72d4bd;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.1);
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 0;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+
+/* =========================
+   DISCLAIMER
+========================= */
+
+.disclaimer {
+    background: #f0f8f6;
+    border-top: 1px solid #dcebe8;
+    padding: 13px 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.disclaimer i {
+    color: #42a696;
+}
+
+.disclaimer p {
+    color: #718783;
+    font-size: 10px;
+    text-align: center;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+
+    .feature-grid,
+    .drug-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .article-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero p {
+        margin: auto;
+    }
+
+    .hero-buttons,
+    .hero-stats {
+        justify-content: center;
+    }
+
+    .hero-image {
+        min-height: 350px;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .nav-container {
+        height: 68px;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 68px;
+        left: 0;
+        width: 100%;
+        background: white;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 5%;
+        box-shadow: 0 15px 25px rgba(0,0,0,.08);
+    }
+
+    .nav-menu.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-content {
+        padding: 50px 0;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .medical-circle {
+        width: 230px;
+        height: 230px;
+        font-size: 80px;
+    }
+
+    .card-one {
+        left: 0;
+    }
+
+    .card-two {
+        right: 0;
+    }
+
+    .feature-grid,
+    .drug-grid,
+    .category-grid,
+    .article-grid,
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading.left {
+        display: block;
+    }
+
+    .text-button {
+        margin-top: 15px;
+    }
+
+    .detail-header {
+        padding: 25px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .detail-body {
+        padding: 25px;
+    }
+
+    .detail-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-area {
+        align-items: flex-start;
+        gap: 15px;
+        flex-direction: column;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .search-box button {
+        padding: 11px 14px;
+    }
+
+    .article-detail {
+        padding: 25px;
+    }
+
+    .article-detail h1 {
+        font-size: 27px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .disclaimer {
+        padding: 15px 20px;
+    }
+}/* =====================================================
+   FARMASIKU — PINK & GREEN COLOR PALETTE
+   Hanya mengubah warna, tidak mengubah layout/fungsi
+===================================================== */
+
+/* Background utama */
+body {
+    background: #fff9fb;
+    color: #286b5d;
+}
+
+/* Header */
+.header {
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom-color: #f3dce4;
+}
+
+/* Logo */
+.logo-icon {
+    background: linear-gradient(135deg, #5cbf9e, #e88ba8);
+}
+
+.logo span {
+    color: #286b5d;
+}
+
+.logo strong {
+    color: #d96f91;
+}
+
+.logo small {
+    color: #8a9e98;
+}
+
+/* Navigation */
+.nav-menu a {
+    color: #637c75;
+}
+
+.nav-menu a:hover {
+    color: #d96f91;
+}
+
+.menu-toggle {
+    color: #5cbf9e;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    background:
+        radial-gradient(circle at 85% 30%, #f9dce6, transparent 25%),
+        linear-gradient(135deg, #f0faf5, #fff5f8);
+}
+
+.badge {
+    background: #03045E;
+    color: #c85f80;
+}
+
+.hero h1 {
+    color: #286b5d;
+}
+
+.hero h1 span {
+    color: #d96f91;
+}
+
+.hero p {
+    color: #718780;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #5cbf9e, #e88ba8);
+    box-shadow: 0 10px 25px rgba(216, 111, 145, .18);
+}
+
+.btn-secondary {
+    color: #438b78;
+    background: #ffffff;
+    border-color: #eadde2;
+}
+
+.btn-secondary:hover {
+    background: #fdf0f4;
+}
+
+.hero-stats strong {
+    color: #d96f91;
+}
+
+.hero-stats span {
+    color: #83958f;
+}
+
+.medical-circle {
+    background: linear-gradient(135deg, #a9dfc9, #f4b8ca);
+    box-shadow: 0 30px 70px rgba(92, 191, 158, .18);
+}
+
+.floating-card {
+    color: #426d63;
+}
+
+.floating-card i {
+    color: #d96f91;
+}
+
+
+/* =====================================================
+   SECTION
+===================================================== */
+
+.quick-section {
+    background: #ffffff;
+}
+
+.section-heading span,
+.page-title span,
+.about-content > span {
+    color: #d96f91;
+}
+
+.section-heading h2 {
+    color: #286b5d;
+}
+
+.section-heading p {
+    color: #81938e;
+}
+
+
+/* =====================================================
+   FEATURE CARD
+===================================================== */
+
+.feature-card {
+    border-color: #f0e1e6;
+    background: #ffffff;
+}
+
+.feature-card:hover {
+    box-shadow: 0 18px 40px rgba(92, 130, 115, .12);
+}
+
+.feature-icon {
+    background: #e5f7ef;
+    color: #4baa8c;
+}
+
+.feature-icon.blue {
+    background: #fbe4ec;
+    color: #d96f91;
+}
+
+.feature-icon.purple {
+    background: #f9e8ef;
+    color: #c66b88;
+}
+
+.feature-icon.orange {
+    background: #fbe4ec;
+    color: #d96f91;
+}
+
+.feature-card h3 {
+    color: #286b5d;
+}
+
+.feature-card p {
+    color: #7c918a;
+}
+
+.feature-card button {
+    color: #d96f91;
+}
+
+
+/* =====================================================
+   DRUG CARDS
+===================================================== */
+
+.drug-card {
+    background: #ffffff;
+    border-color: #efdee5;
+}
+
+.drug-card:hover {
+    box-shadow: 0 15px 35px rgba(92, 130, 115, .12);
+}
+
+.drug-icon {
+    background: #e5f7ef;
+    color: #4baa8c;
+}
+
+.drug-card h3 {
+    color: #286b5d;
+}
+
+.drug-card p {
+    color: #83948e;
+}
+
+.drug-tag {
+    background: #fbe4ec;
+    color: #c85f80;
+}
+
+.text-button {
+    color: #d96f91;
+}
+
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.back-button {
+    color: #4c917e;
+    background: #ffffff;
+    border-color: #eadde2;
+}
+
+.back-button:hover {
+    background: #fdf0f4;
+}
+
+.page-title h1 {
+    color: #286b5d;
+}
+
+.page-title p {
+    color: #81938e;
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.search-box {
+    background: #ffffff;
+    border-color: #eddee4;
+    box-shadow: 0 10px 30px rgba(92, 130, 115, .07);
+}
+
+.search-box i {
+    color: #d98aa2;
+}
+
+.search-box button {
+    background: linear-gradient(135deg, #5cbf9e, #d96f91);
+}
+
+.filter-area label {
+    color: #66827a;
+}
+
+.filter-area select {
+    border-color: #e8dce1;
+    color: #4d756b;
+}
+
+.result-count {
+    color: #84958f;
+}
+
+
+/* =====================================================
+   DRUG DETAIL
+===================================================== */
+
+.drug-detail-card {
+    background: #ffffff;
+    border-color: #eddee4;
+    box-shadow: 0 15px 40px rgba(92, 130, 115, .08);
+}
+
+.detail-header {
+    background: linear-gradient(135deg, #e5f7ef, #fde8ef);
+}
+
+.detail-icon {
+    color: #d96f91;
+}
+
+.detail-header h1 {
+    color: #286b5d;
+}
+
+.detail-header p {
+    color: #718780;
+}
+
+.detail-body {
+    background: #ffffff;
+}
+
+.info-box {
+    background: #f5fbf8;
+}
+
+.info-box h4 {
+    color: #63837a;
+}
+
+.info-box p {
+    color: #286b5d;
+}
+
+.detail-section h3 {
+    color: #357363;
+}
+
+.detail-section p {
+    color: #718780;
+}
+
+.warning-box {
+    background: #fff0f4;
+    border-color: #f2ccd8;
+    color: #a45870;
+}
+
+
+/* =====================================================
+   CATEGORY
+===================================================== */
+
+.category-card {
+    background: #ffffff;
+    border-color: #eddee4;
+}
+
+.category-card:hover {
+    box-shadow: 0 15px 35px rgba(92, 130, 115, .09);
+}
+
+.category-icon.green {
+    background: #e2f7ee;
+    color: #4baa8c;
+}
+
+.category-icon.blue {
+    background: #fbe4ec;
+    color: #d96f91;
+}
+
+.category-icon.red {
+    background: #fde7ed;
+    color: #d96f91;
+}
+
+.category-icon.purple {
+    background: #f8e7ee;
+    color: #c66b88;
+}
+
+.category-icon.dark {
+    background: #e8f2ee;
+    color: #47786c;
+}
+
+.category-card h3 {
+    color: #286b5d;
+}
+
+.category-card p {
+    color: #7b9089;
+}
+
+.symbol {
+    color: #d96f91;
+}
+
+
+/* =====================================================
+   ARTICLES
+===================================================== */
+
+.article-card {
+    background: #ffffff;
+    border-color: #eddee4;
+}
+
+.article-card:hover {
+    box-shadow: 0 15px 35px rgba(92, 130, 115, .1);
+}
+
+.article-icon {
+    background: #e5f7ef;
+    color: #4baa8c;
+}
+
+.article-card h3 {
+    color: #286b5d;
+}
+
+.article-card p {
+    color: #7b9089;
+}
+
+.article-card span {
+    color: #d96f91;
+}
+
+.article-detail {
+    background: #ffffff;
+    border-color: #eddee4;
+}
+
+.article-detail h1 {
+    color: #286b5d;
+}
+
+.article-detail h3 {
+    color: #357363;
+}
+
+.article-detail p,
+.article-detail li {
+    color: #718780;
+}
+
+
+/* =====================================================
+   TIPS
+===================================================== */
+
+.tip-item {
+    background: #ffffff;
+    border-color: #eddee4;
+}
+
+.tip-number {
+    background: #e5f7ef;
+    color: #4baa8c;
+}
+
+.tip-item h3 {
+    color: #286b5d;
+}
+
+.tip-item p {
+    color: #7b9089;
+}
+
+.safety-box {
+    background: linear-gradient(135deg, #e5f7ef, #fde8ef);
+}
+
+.safety-box > i {
+    color: #d96f91;
+}
+
+.safety-box h3 {
+    color: #286b5d;
+}
+
+.safety-box p {
+    color: #718780;
+}
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about-icon {
+    background: linear-gradient(135deg, #5cbf9e, #e88ba8);
+}
+
+.about-content h1 {
+    color: #286b5d;
+}
+
+.about-content > p {
+    color: #718780;
+}
+
+.about-grid div {
+    background: #ffffff;
+    border-color: #eddee4;
+}
+
+.about-grid i {
+    color: #d96f91;
+}
+
+.about-grid h3 {
+    color: #286b5d;
+}
+
+.about-grid p {
+    color: #81938e;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+    background: #214f47;
+}
+
+.footer .logo strong {
+    color: #f0a5bb;
+}
+
+.footer p {
+    color: #a9c1ba;
+}
+
+.footer a {
+    color: #b4c9c3;
+}
+
+.footer a:hover {
+    color: #f0a5bb;
+}
+
+.footer-bottom {
+    border-top-color: rgba(255,255,255,.12);
+}
+
+
+/* =====================================================
+   DISCLAIMER
+===================================================== */
+
+.disclaimer {
+    background: #fff1f5;
+    border-top-color: #f0dce3;
+}
+
+.disclaimer i {
+    color: #d96f91;
+}
+
+.disclaimer p {
+    color: #718780;
+}
+/* =====================================================
+   FARMASIKU — BLUE & PEACH COLOR PALETTE
+   Hanya mengubah warna, tidak mengubah layout/fungsi
+===================================================== */
+
+/* Background utama */
+body {
+    background: #f8fdff;
+    color: #053f5c;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom-color: #d9f3f9;
+}
+
+/* Logo */
+.logo-icon {
+    background: linear-gradient(135deg, #429ebd, #9fe7f5);
+}
+
+.logo span {
+    color: #053f5c;
+}
+
+.logo strong {
+    color: #429ebd;
+}
+
+.logo small {
+    color: #6f8995;
+}
+
+/* Navigation */
+.nav-menu a {
+    color: #527483;
+}
+
+.nav-menu a:hover {
+    color: #429ebd;
+}
+
+.menu-toggle {
+    color: #429ebd;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    background:
+        radial-gradient(circle at 85% 30%, #dff8fc, transparent 25%),
+        linear-gradient(135deg, #effcff, #fff7f3);
+}
+
+.badge {
+    background: #dff8fc;
+    color: #287d9c;
+}
+
+.hero h1 {
+    color: #053f5c;
+}
+
+.hero h1 span {
+    color: #429ebd;
+}
+
+.hero p {
+    color: #66818e;
+}
+
+/* Primary button */
+.btn-primary {
+    background: linear-gradient(135deg, #429ebd, #053f5c);
+    box-shadow: 0 10px 25px rgba(66, 158, 189, 0.20);
+}
+
+/* Secondary button */
+.btn-secondary {
+    color: #429ebd;
+    background: #ffffff;
+    border-color: #cfeef5;
+}
+
+.btn-secondary:hover {
+    background: #f0fbfd;
+}
+
+.hero-stats strong {
+    color: #429ebd;
+}
+
+.hero-stats span {
+    color: #78919c;
+}
+
+/* Hero illustration */
+.medical-circle {
+    background: linear-gradient(135deg, #9fe7f5, #f3c3b2);
+    box-shadow: 0 30px 70px rgba(66, 158, 189, 0.18);
+}
+
+.floating-card {
+    color: #365f70;
+}
+
+.floating-card i {
+    color: #429ebd;
+}
+
+
+/* ================= SECTION ================= */
+
+.quick-section {
+    background: #ffffff;
+}
+
+.section-heading span,
+.page-title span,
+.about-content > span {
+    color: #429ebd;
+}
+
+.section-heading h2 {
+    color: #053f5c;
+}
+
+.section-heading p {
+    color: #718a95;
+}
+
+
+/* ================= FEATURE CARD ================= */
+
+.feature-card {
+    border-color: #d9eef4;
+    background: #ffffff;
+}
+
+.feature-card:hover {
+    box-shadow: 0 18px 40px rgba(5, 63, 92, 0.10);
+}
+
+.feature-icon {
+    background: #e5f9fc;
+    color: #429ebd;
+}
+
+.feature-icon.blue {
+    background: #dff6fb;
+    color: #429ebd;
+}
+
+.feature-icon.purple {
+    background: #fcece6;
+    color: #d58e75;
+}
+
+.feature-icon.orange {
+    background: #f9ddd2;
+    color: #c97d64;
+}
+
+.feature-card h3 {
+    color: #053f5c;
+}
+
+.feature-card p {
+    color: #718a95;
+}
+
+.feature-card button {
+    color: #429ebd;
+}
+
+
+/* ================= DRUG CARDS ================= */
+
+.drug-card {
+    background: #ffffff;
+    border-color: #d9eef4;
+}
+
+.drug-card:hover {
+    box-shadow: 0 15px 35px rgba(5, 63, 92, 0.10);
+}
+
+.drug-icon {
+    background: #e5f9fc;
+    color: #429ebd;
+}
+
+.drug-card h3 {
+    color: #053f5c;
+}
+
+.drug-card p {
+    color: #718a95;
+}
+
+.drug-tag {
+    background: #dff6fb;
+    color: #287d9c;
+}
+
+.text-button {
+    color: #429ebd;
+}
+
+
+/* ================= PAGE ================= */
+
+.back-button {
+    color: #429ebd;
+    background: #ffffff;
+    border-color: #d5edf3;
+}
+
+.back-button:hover {
+    background: #f0fbfd;
+}
+
+.page-title h1 {
+    color: #053f5c;
+}
+
+.page-title p {
+    color: #718a95;
+}
+
+
+/* ================= SEARCH ================= */
+
+.search-box {
+    background: #ffffff;
+    border-color: #d6edf3;
+    box-shadow: 0 10px 30px rgba(5, 63, 92, 0.07);
+}
+
+.search-box i {
+    color: #429ebd;
+}
+
+.search-box button {
+    background: linear-gradient(135deg, #429ebd, #053f5c);
+}
+
+.filter-area label {
+    color: #527483;
+}
+
+.filter-area select {
+    border-color: #d6eaf0;
+    color: #365f70;
+}
+
+.result-count {
+    color: #78919c;
+}
+
+
+/* ================= DRUG DETAIL ================= */
+
+.drug-detail-card {
+    background: #ffffff;
+    border-color: #d9eef4;
+    box-shadow: 0 15px 40px rgba(5, 63, 92, 0.08);
+}
+
+.detail-header {
+    background: linear-gradient(135deg, #e5f9fc, #fff0ea);
+}
+
+.detail-icon {
+    color: #429ebd;
+}
+
+.detail-header h1 {
+    color: #053f5c;
+}
+
+.detail-header p {
+    color: #66818e;
+}
+
+.detail-body {
+    background: #ffffff;
+}
+
+.info-box {
+    background: #f0fbfd;
+}
+
+.info-box h4 {
+    color: #527483;
+}
+
+.info-box p {
+    color: #053f5c;
+}
+
+.detail-section h3 {
+    color: #286f89;
+}
+
+.detail-section p {
+    color: #66818e;
+}
+
+.warning-box {
+    background: #fff0eb;
+    border-color: #f3c3b2;
+    color: #a76652;
+}
+
+
+/* ================= CATEGORY ================= */
+
+.category-card {
+    background: #ffffff;
+    border-color: #d9eef4;
+}
+
+.category-card:hover {
+    box-shadow: 0 15px 35px rgba(5, 63, 92, 0.09);
+}
+
+.category-icon.green {
+    background: #e5f9fc;
+    color: #429ebd;
+}
+
+.category-icon.blue {
+    background: #dff6fb;
+    color: #429ebd;
+}
+
+.category-icon.red {
+    background: #fff0eb;
+    color: #c97d64;
+}
+
+.category-icon.purple {
+    background: #fcece6;
+    color: #c97d64;
+}
+
+.category-icon.dark {
+    background: #e2f0f5;
+    color: #053f5c;
+}
+
+.category-card h3 {
+    color: #053f5c;
+}
+
+.category-card p {
+    color: #718a95;
+}
+
+.symbol {
+    color: #429ebd;
+}
+
+
+/* ================= ARTICLES ================= */
+
+.article-card {
+    background: #ffffff;
+    border-color: #d9eef4;
+}
+
+.article-card:hover {
+    box-shadow: 0 15px 35px rgba(5, 63, 92, 0.10);
+}
+
+.article-icon {
+    background: #e5f9fc;
+    color: #429ebd;
+}
+
+.article-card h3 {
+    color: #053f5c;
+}
+
+.article-card p {
+    color: #718a95;
+}
+
+.article-card span {
+    color: #429ebd;
+}
+
+.article-detail {
+    background: #ffffff;
+    border-color: #d9eef4;
+}
+
+.article-detail h1 {
+    color: #053f5c;
+}
+
+.article-detail h3 {
+    color: #286f89;
+}
+
+.article-detail p,
+.article-detail li {
+    color: #66818e;
+}
+
+
+/* ================= TIPS ================= */
+
+.tip-item {
+    background: #ffffff;
+    border-color: #d9eef4;
+}
+
+.tip-number {
+    background: #e5f9fc;
+    color: #429ebd;
+}
+
+.tip-item h3 {
+    color: #053f5c;
+}
+
+.tip-item p {
+    color: #718a95;
+}
+
+.safety-box {
+    background: linear-gradient(135deg, #e5f9fc, #fff0eb);
+}
+
+.safety-box > i {
+    color: #429ebd;
+}
+
+.safety-box h3 {
+    color: #053f5c;
+}
+
+.safety-box p {
+    color: #66818e;
+}
+
+
+/* ================= ABOUT ================= */
+
+.about-icon {
+    background: linear-gradient(135deg, #429ebd, #9fe7f5);
+}
+
+.about-content h1 {
+    color: #053f5c;
+}
+
+.about-content > p {
+    color: #66818e;
+}
+
+.about-grid div {
+    background: #ffffff;
+    border-color: #d9eef4;
+}
+
+.about-grid i {
+    color: #429ebd;
+}
+
+.about-grid h3 {
+    color: #053f5c;
+}
+
+.about-grid p {
+    color: #718a95;
+}
+
+
+/* ================= FOOTER ================= */
+
+.footer {
+    background: #053f5c;
+}
+
+.footer .logo strong {
+    color: #f3c3b2;
+}
+
+.footer p {
+    color: #a8c5d0;
+}
+
+.footer a {
+    color: #b7d2dc;
+}
+
+.footer a:hover {
+    color: #f3c3b2;
+}
+
+.footer-bottom {
+    border-top-color: rgba(255, 255, 255, 0.12);
+}
+
+
+/* ================= DISCLAIMER ================= */
+
+.disclaimer {
+    background: #fff5f1;
+    border-top-color: #f3ddd4;
+}
+
+.disclaimer i {
+    color: #429ebd;
+}
+
+.disclaimer p {
+    color: #66818e;
+}
+/* =====================================================
+   FARMASIKU — BLUE & PEACH COLOR PALETTE
+   Hanya mengubah warna, tidak mengubah layout/fungsi
+===================================================== */
+
+/* Background utama */
+body {
+    background: #f8fdff;
+    color: #053f5c;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom-color: #d9f3f9;
+}
+
+/* Logo */
+.logo-icon {
+    background: linear-gradient(135deg, #429ebd, #9fe7f5);
+}
+
+.logo span {
+    color: #053f5c;
+}
+
+.logo strong {
+    color: #429ebd;
+}
+
+.logo small {
+    color: #6f8995;
+}
+
+/* Navigation */
+.nav-menu a {
+    color: #527483;
+}
+
+.nav-menu a:hover {
+    color: #429ebd;
+}
+
+.menu-toggle {
+    color: #429ebd;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    background:
+        radial-gradient(circle at 85% 30%, #dff8fc, transparent 25%),
+        linear-gradient(135deg, #effcff, #fff7f3);
+}
+
+.badge {
+    background: #dff8fc;
+    color: #287d9c;
+}
+
+.hero h1 {
+    color: #053f5c;
+}
+
+.hero h1 span {
+    color: #429ebd;
+}
+
+.hero p {
+    color: #66818e;
+}
+
+/* Primary button */
+.btn-primary {
+    background: linear-gradient(135deg, #429ebd, #053f5c);
+    box-shadow: 0 10px 25px rgba(66, 158, 189, 0.20);
+}
+
+/* Secondary button */
+.btn-secondary {
+    color: #429ebd;
+    background: #ffffff;
+    border-color: #cfeef5;
+}
+
+.btn-secondary:hover {
+    background: #f0fbfd;
+}
+
+.hero-stats strong {
+    color: #429ebd;
+}
+
+.hero-stats span {
+    color: #78919c;
+}
+
+/* Hero illustration */
+.medical-circle {
+    background: linear-gradient(135deg, #9fe7f5, #f3c3b2);
+    box-shadow: 0 30px 70px rgba(66, 158, 189, 0.18);
+}
+
+.floating-card {
+    color: #365f70;
+}
+
+.floating-card i {
+    color: #429ebd;
+}
+
+
+/* ================= SECTION ================= */
+
+.quick-section {
+    background: #ffffff;
+}
+
+.section-heading span,
+.page-title span,
+.about-content > span {
+    color: #429ebd;
+}
+
+.section-heading h2 {
+    color: #053f5c;
+}
+
+.section-heading p {
+    color: #718a95;
+}
+
+
+/* ================= FEATURE CARD ================= */
+
+.feature-card {
+    border-color: #d9eef4;
+    background: #ffffff;
+}
+
+.feature-card:hover {
+    box-shadow: 0 18px 40px rgba(5, 63, 92, 0.10);
+}
+
+.feature-icon {
+    background: #e5f9fc;
+    color: #429ebd;
+}
+
+.feature-icon.blue {
+    background: #dff6fb;
+    color: #429ebd;
+}
+
+.feature-icon.purple {
+    background: #fcece6;
+    color: #d58e75;
+}
+
+.feature-icon.orange {
+    background: #f9ddd2;
+    color: #c97d64;
+}
+
+.feature-card h3 {
+    color: #053f5c;
+}
+
+.feature-card p {
+    color: #718a95;
+}
+
+.feature-card button {
+    color: #429ebd;
+}
+
+
+/* ================= DRUG CARDS ================= */
+
+.drug-card {
+    background: #ffffff;
+    border-color: #d9eef4;
+}
+
+.drug-card:hover {
+    box-shadow: 0 15px 35px rgba(5, 63, 92, 0.10);
+}
+
+.drug-icon {
+    background: #e5f9fc;
+    color: #429ebd;
+}
+
+.drug-card h3 {
+    color: #053f5c;
+}
+
+.drug-card p {
+    color: #718a95;
+}
+
+.drug-tag {
+    background: #dff6fb;
+    color: #287d9c;
+}
+
+.text-button {
+    color: #429ebd;
+}
+
+
+/* ================= PAGE ================= */
+
+.back-button {
+    color: #429ebd;
+    background: #ffffff;
+    border-color: #d5edf3;
+}
+
+.back-button:hover {
+    background: #f0fbfd;
+}
+
+.page-title h1 {
+    color: #053f5c;
+}
+
+.page-title p {
+    color: #718a95;
+}
+
+
+/* ================= SEARCH ================= */
+
+.search-box {
+    background: #ffffff;
+    border-color: #d6edf3;
+    box-shadow: 0 10px 30px rgba(5, 63, 92, 0.07);
+}
+
+.search-box i {
+    color: #429ebd;
+}
+
+.search-box button {
+    background: linear-gradient(135deg, #429ebd, #053f5c);
+}
+
+.filter-area label {
+    color: #527483;
+}
+
+.filter-area select {
+    border-color: #d6eaf0;
+    color: #365f70;
+}
+
+.result-count {
+    color: #78919c;
+}
+
+
+/* ================= DRUG DETAIL ================= */
+
+.drug-detail-card {
+    background: #ffffff;
+    border-color: #d9eef4;
+    box-shadow: 0 15px 40px rgba(5, 63, 92, 0.08);
+}
+
+.detail-header {
+    background: linear-gradient(135deg, #e5f9fc, #fff0ea);
+}
+
+.detail-icon {
+    color: #429ebd;
+}
+
+.detail-header h1 {
+    color: #053f5c;
+}
+
+.detail-header p {
+    color: #66818e;
+}
+
+.detail-body {
+    background: #ffffff;
+}
+
+.info-box {
+    background: #f0fbfd;
+}
+
+.info-box h4 {
+    color: #527483;
+}
+
+.info-box p {
+    color: #053f5c;
+}
+
+.detail-section h3 {
+    color: #286f89;
+}
+
+.detail-section p {
+    color: #66818e;
+}
+
+.warning-box {
+    background: #fff0eb;
+    border-color: #f3c3b2;
+    color: #a76652;
+}
+
+
+/* ================= CATEGORY ================= */
+
+.category-card {
+    background: #ffffff;
+    border-color: #d9eef4;
+}
+
+.category-card:hover {
+    box-shadow: 0 15px 35px rgba(5, 63, 92, 0.09);
+}
+
+.category-icon.green {
+    background: #e5f9fc;
+    color: #429ebd;
+}
+
+.category-icon.blue {
+    background: #dff6fb;
+    color: #429ebd;
+}
+
+.category-icon.red {
+    background: #fff0eb;
+    color: #c97d64;
+}
+
+.category-icon.purple {
+    background: #fcece6;
+    color: #c97d64;
+}
+
+.category-icon.dark {
+    background: #e2f0f5;
+    color: #053f5c;
+}
+
+.category-card h3 {
+    color: #053f5c;
+}
+
+.category-card p {
+    color: #718a95;
+}
+
+.symbol {
+    color: #429ebd;
+}
+
+
+/* ================= ARTICLES ================= */
+
+.article-card {
+    background: #ffffff;
+    border-color: #d9eef4;
+}
+
+.article-card:hover {
+    box-shadow: 0 15px 35px rgba(5, 63, 92, 0.10);
+}
+
+.article-icon {
+    background: #e5f9fc;
+    color: #429ebd;
+}
+
+.article-card h3 {
+    color: #053f5c;
+}
+
+.article-card p {
+    color: #718a95;
+}
+
+.article-card span {
+    color: #429ebd;
+}
+
+.article-detail {
+    background: #ffffff;
+    border-color: #d9eef4;
+}
+
+.article-detail h1 {
+    color: #053f5c;
+}
+
+.article-detail h3 {
+    color: #286f89;
+}
+
+.article-detail p,
+.article-detail li {
+    color: #66818e;
+}
+
+
+/* ================= TIPS ================= */
+
+.tip-item {
+    background: #ffffff;
+    border-color: #d9eef4;
+}
+
+.tip-number {
+    background: #e5f9fc;
+    color: #429ebd;
+}
+
+.tip-item h3 {
+    color: #053f5c;
+}
+
+.tip-item p {
+    color: #718a95;
+}
+
+.safety-box {
+    background: linear-gradient(135deg, #e5f9fc, #fff0eb);
+}
+
+.safety-box > i {
+    color: #429ebd;
+}
+
+.safety-box h3 {
+    color: #053f5c;
+}
+
+.safety-box p {
+    color: #66818e;
+}
+
+
+/* ================= ABOUT ================= */
+
+.about-icon {
+    background: linear-gradient(135deg, #429ebd, #9fe7f5);
+}
+
+.about-content h1 {
+    color: #053f5c;
+}
+
+.about-content > p {
+    color: #66818e;
+}
+
+.about-grid div {
+    background: #ffffff;
+    border-color: #d9eef4;
+}
+
+.about-grid i {
+    color: #429ebd;
+}
+
+.about-grid h3 {
+    color: #053f5c;
+}
+
+.about-grid p {
+    color: #718a95;
+}
+
+
+/* ================= FOOTER ================= */
+
+.footer {
+    background: #053f5c;
+}
+
+.footer .logo strong {
+    color: #f3c3b2;
+}
+
+.footer p {
+    color: #a8c5d0;
+}
+
+.footer a {
+    color: #b7d2dc;
+}
+
+.footer a:hover {
+    color: #f3c3b2;
+}
+
+.footer-bottom {
+    border-top-color: rgba(255, 255, 255, 0.12);
+}
+
+
+/* ================= DISCLAIMER ================= */
+
+.disclaimer {
+    background: #fff5f1;
+    border-top-color: #f3ddd4;
+}
+
+.disclaimer i {
+    color: #429ebd;
+}
+
+.disclaimer p {
+    color: #66818e;
+}
+/* ================= LOGIN ================= */
+
+.login-container {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 420px;
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.10);
+}
+
+.login-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #e8f7ef;
+    color: #168a4a;
+
+    border-radius: 50%;
+
+    font-size: 25px;
+}
+
+.login-card h1 {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.login-subtitle {
+    text-align: center;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.input-box {
+    display: flex;
+    align-items: center;
+
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    padding: 0 15px;
+
+    background: #fafafa;
+}
+
+.input-box i {
+    color: #168a4a;
+    margin-right: 10px;
+}
+
+.input-box input {
+    width: 100%;
+    border: none;
+    outline: none;
+
+    padding: 13px 5px;
+
+    background: transparent;
+    font-family: inherit;
+}
+
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.login-options a {
+    color: #168a4a;
+    text-decoration: none;
+}
+
+.login-button {
+    width: 100%;
+    border: none;
+
+    padding: 13px;
+
+    border-radius: 10px;
+
+    background: #168a4a;
+    color: white;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.login-button:hover {
+    background: #116d3a;
+}
+
+.register-text {
+    text-align: center;
+    margin-top: 20px;
+
+    font-size: 14px;
+}
+
+.register-text a {
+    color: #168a4a;
+    font-weight: 600;
+    text-decoration: none;
+}
+/* =========================
+   LOGIN
+========================= */
+
+#login {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(159, 231, 245, 0.45), transparent 25%),
+        radial-gradient(circle at 85% 80%, rgba(243, 195, 178, 0.35), transparent 25%),
+        linear-gradient(135deg, #effcff, #fff7f3);
+}
+
+#login .page-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+}
+
+.login-card {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.96);
+    padding: 40px;
+    border-radius: 25px;
+    border: 1px solid #d9eef4;
+    box-shadow: 0 25px 60px rgba(5, 63, 92, 0.12);
+}
+
+.login-icon {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 20px;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(135deg, #429ebd, #9fe7f5);
+    color: white;
+    font-size: 30px;
+
+    box-shadow: 0 12px 30px rgba(66, 158, 189, 0.25);
+}
+
+.login-card h1 {
+    text-align: center;
+    color: #053f5c;
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.login-subtitle {
+    text-align: center;
+    color: #718a95;
+    font-size: 13px;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+    color: #365f70;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+.input-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    background: #f8fdff;
+    border: 1px solid #d6edf3;
+    border-radius: 12px;
+    padding: 0 14px;
+
+    transition: 0.3s;
+}
+
+.input-box i {
+    color: #429ebd;
+    font-size: 14px;
+}
+
+.input-box input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background: transparent;
+
+    padding: 13px 0;
+    color: #053f5c;
+    font-size: 13px;
+}
+
+.input-box:focus-within {
+    border-color: #429ebd;
+    box-shadow: 0 0 0 3px rgba(66, 158, 189, 0.10);
+}
+
+.login-button {
+    width: 100%;
+    border: 0;
+    border-radius: 12px;
+
+    padding: 14px;
+    margin-top: 10px;
+
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+
+    background: linear-gradient(135deg, #429ebd, #053f5c);
+    box-shadow: 0 10px 25px rgba(66, 158, 189, 0.20);
+
+    transition: 0.3s;
+}
+
+.login-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(66, 158, 189, 0.25);
+}
+
+.login-card a {
+    color: #429ebd;
+}
+
+.login-card a:hover {
+    color: #053f5c;
+}
+
+
+/* =========================
+   DEKORASI LOGIN
+========================= */
+
+.login-container::before {
+    content: "";
+    position: absolute;
+
+    width: 130px;
+    height: 130px;
+
+    border-radius: 50%;
+
+    background: linear-gradient(135deg, #9fe7f5, #dff8fc);
+
+    top: -55px;
+    left: -55px;
+
+    opacity: 0.8;
+}
+
+.login-container::after {
+    content: "";
+    position: absolute;
+
+    width: 110px;
+    height: 110px;
+
+    border-radius: 50%;
+
+    background: linear-gradient(135deg, #f3c3b2, #fff0eb);
+
+    bottom: -45px;
+    right: -45px;
+
+    opacity: 0.8;
+}
+
+
+/* =========================
+   LOGIN MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    #login .page-container {
+        padding: 30px 15px;
+    }
+
+    .login-card {
+        padding: 30px 22px;
+        border-radius: 20px;
+    }
+
+    .login-card h1 {
+        font-size: 26px;
+    }
+
+    .login-container::before {
+        width: 90px;
+        height: 90px;
+        top: -25px;
+        left: -20px;
+    }
+
+    .login-container::after {
+        width: 80px;
+        height: 80px;
+        bottom: -25px;
+        right: -20px;
+    }
+}
